@@ -26,7 +26,7 @@
     <b>omschrijving</b>: {{ comp.omschrijving }}<br>
     <b>id</b>: {{ comp.componenten-id }}<br>
     <b>versie</b>: {{ comp.componenten-version }}<br>
-    <b>url</b>: <a href="{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
+    <b>url</b>: <a href="{{ site.url }}{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
     <b>code</b>:<br>
     {% highlight html %}{{ comp }}{% endhighlight %}
     <b>uitleg</b>: {{ comp.uitleg }}<br>
