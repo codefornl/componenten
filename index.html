@@ -18,7 +18,7 @@
 {% for comp in site.componenten %}
 <section style="background: white; padding: 10px 20px; margin: 20px" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
   <p>
-    <iframe src="{{ comp.url }}" style="border: none"></iframe><br>
+    <iframe src="{{ site.url }}{{ comp.url }}" style="border: none"></iframe><br>
     <hr>
     <b>org</b>: {{ comp.org }}<br>
     <b>set</b>: {{ comp.set }}<br>
