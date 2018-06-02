@@ -1,4 +1,4 @@
 collections:
   componenten:
     output: true
-    permalink: /:collections/:path
+    permalink: /:collection/:path
