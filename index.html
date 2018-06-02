@@ -1,2 +1,48 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+</head>
+<body style="background: #ccc">
 <h2>Code for NL</h2>
 <h1>Componenten Bibliotheek</h1>
+<input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="zoeken"></input>
+
+<hr>
+
+{% for comp in site.componenten %}
+<section style="background: white; padding: 10px 20px; margin: 20px" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
+  <p>
+    <iframe src="{{ comp.url }}" style="border: none"></iframe><br>
+    <hr>
+    <b>org</b>: {{ comp.org }}<br>
+    <b>set</b>: {{ comp.set }}<br>
+    <b>type</b>: {{ comp.type }}<br>
+    <b>omschrijving</b>: {{ comp.omschrijving }}<br>
+    <b>id</b>: {{ comp.componenten-id }}<br>
+    <b>versie</b>: {{ comp.componenten-version }}<br>
+    <b>url</b>: <a href="{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
+    <b>code</b>:<br>
+    {% highlight html %}{{ comp }}{% endhighlight %}
+    <b>uitleg</b>: {{ comp.uitleg }}<br>
+    <b>test</b>: {{ comp.test }}<br>
+    <b>contact</b>: {{ comp.contact.naam }}<br>
+    <b>email</b>: {{ comp.contact.email }}
+  </p>
+</section>
+{% endfor %}
+<script>
+  $('[data-search]').keyup(function (e) {
+    var search = e.target.value;
+    $('[data-search-words]').each(function (i, el) {
+      $(el).toggle($(el).data('search-words').indexOf(search) >= 0);
+    });
+  });
+</script>
+</body>
+</html>
