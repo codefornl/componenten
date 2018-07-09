@@ -7,35 +7,46 @@
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
 </head>
-<body style="background: #ccc">
-<h2>Code for NL</h2>
-<h1>Componenten Bibliotheek</h1>
-<input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="zoeken"></input>
+<body>
+  <header>
+    <h2>Mens centraal</h2>
+    <h1>Componenten Bibliotheek</h1>
+    <p>Overzicht van beschikbare componenten voor design en development van digitale diensten voor overheden.</p>
+    <br>
+    <p>
+      Zoek een component:<br>
+      <br>
+      <input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="zoeken"></input>
+    </p>
+  </header>
 
-<hr>
-
-{% for comp in site.componenten %}
-<section style="background: white; padding: 10px 20px; margin: 20px" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
-  <p>
-    <iframe src="{{ site.url }}{{ comp.url }}" style="border: none"></iframe><br>
-    <hr>
-    <b>org</b>: {{ comp.org }}<br>
-    <b>set</b>: {{ comp.set }}<br>
-    <b>type</b>: {{ comp.type }}<br>
-    <b>omschrijving</b>: {{ comp.omschrijving }}<br>
-    <b>id</b>: {{ comp.componenten-id }}<br>
-    <b>versie</b>: {{ comp.componenten-version }}<br>
-    <b>url</b>: <a href="{{ site.url }}{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
-    <b>code</b>:<br>
-    {% highlight html %}{{ comp }}{% endhighlight %}
-    <b>uitleg</b>: {{ comp.uitleg }}<br>
-    <b>test</b>: {{ comp.test }}<br>
-    <b>contact</b>: {{ comp.contact.naam }}<br>
-    <b>email</b>: {{ comp.contact.email }}
-  </p>
-</section>
-{% endfor %}
+  <main>
+    {% for comp in site.componenten %}
+    <section class="component" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
+      <p>
+        <iframe src="{{ site.url }}{{ comp.url }}" style="border: none; float: right"></iframe>
+        <b>org</b>: {{ comp.org }}<br>
+        <b>set</b>: {{ comp.set }}<br>
+        <b>type</b>: {{ comp.type }}<br>
+        <b>omschrijving</b>: {{ comp.omschrijving }}<br>
+        <b>id</b>: {{ comp.componenten-id }}<br>
+        <b>versie</b>: {{ comp.componenten-version }}<br>
+        <b>url</b>: <a href="{{ site.url }}{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
+        <b>sketch</b>: <a href="">download sketch file</a><br>
+        <b>code</b>:<br>
+        {% highlight html %}{{ comp }}{% endhighlight %}
+        <b>uitleg</b>: {{ comp.uitleg }}<br>
+        <b>test</b>: {{ comp.test }}<br>
+        <b>contact</b>: {{ comp.contact.naam }}<br>
+        <b>email</b>: {{ comp.contact.email }}<br>
+        <b>discussie</b>: <a href="">klik hier voor discussie over deze component</a>
+      </p>
+    </section>
+    {% endfor %}
+  </main>
 <script>
   $('[data-search]').keyup(function (e) {
     var search = e.target.value;
