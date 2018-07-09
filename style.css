@@ -11,12 +11,13 @@ pre {
   margin: 10px;
 }
 header {
-  margin: 10px;
-  border-bottom: 1px solid black;
+  margin: 20px 40px 20px;
+  border: 1px solid #0C4153;
   padding: 10px;
+  background: #fff;
 }
-header h1 {
-  font-size: 1.2em;
+h1 {
+  font-size: 1.4em;
   line-height: 2em;
 }
 .component {
