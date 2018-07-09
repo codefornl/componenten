@@ -3,6 +3,8 @@ body {
   font-size: 100%;
   font-weight: 100;
   line-height: 1.4em;
+  background: #ABE1FB;
+  color: #0C4153;
 }
 pre {
   font-family: monospace;
@@ -19,10 +21,14 @@ header h1 {
 }
 .component {
   margin: 40px;
-  background: #D3EAFA;
+  background: #0C4153;
   border-radius: 10px;
   text-align: left;
-  border: 1px solid black;
+  border: 1px solid #0C4153;
+  color: #fff;
+}
+.component a {
+    color: #fff;
 }
 .component .info {
     padding: 20px;
@@ -42,4 +48,9 @@ main {
     text-align: center;
     margin: auto;
     margin-top: 40px;
+}
+.search-box {
+    font-size: 100%;
+    padding: 0.4em;
+    color: #0C4153;
 }

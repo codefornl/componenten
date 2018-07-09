@@ -21,7 +21,8 @@
   </header>
 
   <main>
-    <input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="Zoek component"></input>
+    <a href="/"><img src="UNI-design-system.jpg" style="width: 340px"></a><br>
+    <input class="search-box" data-search type="text" placeholder="Zoek component"></input>
 
     {% for comp in site.componenten %}
     <section class="component" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
