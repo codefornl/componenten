@@ -20,12 +20,26 @@ header h1 {
 .component {
   margin: 40px;
   background: #D3EAFA;
-  padding: 20px;
   border-radius: 10px;
+  text-align: left;
+  border: 1px solid black;
+}
+.component .info {
+    padding: 20px;
 }
 iframe {
   background: #fff;
+  border-radius: 10px 10px 0 0;
 }
 b {
   font-weight: 900;
+}
+p {
+    margin-bottom: 20px;
+}
+main {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
 }

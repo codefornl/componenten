@@ -15,38 +15,34 @@
 </head>
 <body>
   <header>
-    <h2>Mens centraal</h2>
     <h1>Componenten Bibliotheek</h1>
     <p>Overzicht van beschikbare componenten voor design en development van digitale diensten voor overheden.</p>
-    <br>
-    <p>
-      Zoek een component:<br>
-      <br>
-      <input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="zoeken"></input>
-    </p>
+    <p>(Dit is een prototype. Suggesties graag op <a href="https://github.com/codefornl/componenten">github.com/codefornl/componenten</a>.)</p>
   </header>
 
   <main>
+    <input style="font-size: 100%; padding: 0.2em" data-search type="text" placeholder="Zoek component"></input>
+
     {% for comp in site.componenten %}
     <section class="component" data-search-words="org:{{ comp.org }} type:{{ comp.type }} id:{{ comp.componenten-id }}">
-      <p>
-        <iframe src="{{ site.url }}{{ comp.url }}" style="border: none; float: right"></iframe>
-        <b>org</b>: {{ comp.org }}<br>
-        <b>set</b>: {{ comp.set }}<br>
-        <b>type</b>: {{ comp.type }}<br>
-        <b>omschrijving</b>: {{ comp.omschrijving }}<br>
-        <b>id</b>: {{ comp.componenten-id }}<br>
-        <b>versie</b>: {{ comp.componenten-version }}<br>
-        <b>url</b>: <a href="{{ site.url }}{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
-        <b>sketch</b>: <a href="">download sketch file</a><br>
-        <b>code</b>:<br>
-        {% highlight html %}{{ comp }}{% endhighlight %}
-        <b>uitleg</b>: {{ comp.uitleg }}<br>
-        <b>test</b>: {{ comp.test }}<br>
-        <b>contact</b>: {{ comp.contact.naam }}<br>
-        <b>email</b>: {{ comp.contact.email }}<br>
-        <b>discussie</b>: <a href="">klik hier voor discussie over deze component</a>
-      </p>
+        <iframe src="{{ site.url }}{{ comp.url }}" style="border: none; width: 100%"></iframe><br>
+        <div class="info">
+            <b>org</b>: {{ comp.org }}<br>
+            <b>set</b>: {{ comp.set }}<br>
+            <b>type</b>: {{ comp.type }}<br>
+            <b>omschrijving</b>: {{ comp.omschrijving }}<br>
+            <b>id</b>: {{ comp.componenten-id }}<br>
+            <b>versie</b>: {{ comp.componenten-version }}<br>
+            <b>url</b>: <a href="{{ site.url }}{{ comp.url }}">{{ site.url }}{{ comp.url }}</a><br>
+            <b>sketch</b>: <a href="">download sketch file</a><br>
+            <b>code</b>:<br>
+            {% highlight html %}{{ comp }}{% endhighlight %}
+            <b>uitleg</b>: {{ comp.uitleg }}<br>
+            <b>test</b>: {{ comp.test }}<br>
+            <b>contact</b>: {{ comp.contact.naam }}<br>
+            <b>email</b>: {{ comp.contact.email }}<br>
+            <b>discussie</b>: <a href="">klik hier voor discussie over deze component</a>
+        </div>
     </section>
     {% endfor %}
   </main>
